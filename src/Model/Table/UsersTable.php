@@ -8,6 +8,24 @@ use Cake\Validation\Validator;
 class UsersTable extends Table
 {
 
+    /**
+     * Initialize method
+     *
+     * @param array $config The configuration for the Table.
+     * @return void
+     */
+    public function initialize(array $config)
+    {
+        parent::initialize($config);
+
+        $this->setTable('users');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp');
+
+    }
+
     public function validationDefault(Validator $validator)
     {
         return $validator

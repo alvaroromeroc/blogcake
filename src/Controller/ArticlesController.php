@@ -75,7 +75,6 @@ class ArticlesController extends AppController
                 return true;
             }
         }
-
         return parent::isAuthorized($user);
     }
 }
